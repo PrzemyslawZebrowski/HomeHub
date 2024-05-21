@@ -1,0 +1,177 @@
+<mat-card class="filters">
+    <!-- <mat-card-header>
+        <mat-card-title>
+            Find your new home
+        </mat-card-title>
+    </mat-card-header> -->
+    <mat-card-content [formGroup]="form">
+        <ng-container *ngIf="lookups$ | async as lookups">
+            <div class="row">
+                <mat-form-field class="col-3">
+                    <mat-label>{{'ProfileAnnoucementForm.SubjectAndType.Subject' | translate}}</mat-label>
+                    <mat-select formControlName="subjectTypeId">
+                        <mat-option *ngFor="let option of lookups.subjectsTypes"
+                                    [value]="option.id">
+                            {{'Lookup.AnnouncementSubject.' + option.name | translate}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="col-3">
+                    <mat-label>{{'ProfileAnnoucementForm.SubjectAndType.Type' | translate}}</mat-label>
+                    <mat-select formControlName="announcementTypeId">
+                        <mat-option *ngFor="let option of lookups.announcementTypes"
+                                    [value]="option.id">
+                            {{'Lookup.AnnouncementType.' + option.name | translate}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="col-4">
+                    <mat-label>{{'ProfileAnnoucementForm.Localization.Address' | translate}}</mat-label>
+                    <input #address
+                           matInput
+                           type="text"
+                           formControlName="address">
+                </mat-form-field>
+                <mat-form-field class="col-2">
+                    <mat-label>{{'Search.Address.Distance' | translate}}</mat-label>
+                    <mat-select formControlName="radiusDistance">
+                        <mat-option [value]="5">5 km</mat-option>
+                        <mat-option [value]="10">10 km</mat-option>
+                        <mat-option [value]="15">15 km</mat-option>
+                        <mat-option [value]="25">25 km</mat-option>
+                        <mat-option [value]="50">50 km</mat-option>
+                        <mat-option [value]="75">75 km</mat-option>
+                        <mat-option [value]="100">100 km</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <hh-range-control class="col-4"
+                                  [label]="'Search.MainAnnouncement.Price' | translate"
+                                  minControl="priceAmountMin"
+                                  maxControl="priceAmountMax"
+                                  [minValue]="0"
+                                  [autocompleteOptions]="[200000, 300000, 500000, 800000, 1000000]">
+                </hh-range-control>
+                <hh-range-control class="col-4"
+                                  [label]="'Search.MainAnnouncement.Area' | translate"
+                                  minControl="areaMin"
+                                  maxControl="areaMax"
+                                  [minValue]="0"
+                                  unit="m&sup2"
+                                  [autocompleteOptions]="[25, 40, 50, 60, 70, 80, 100, 120, 150]">
+                </hh-range-control>
+                <hh-range-control class="col-4"
+                                  [label]="'Search.MainAnnouncement.NumberOfRooms' | translate"
+                                  minControl="numberOfRoomsMin"
+                                  maxControl="numberOfRoomsMax"
+                                  [minValue]="0"
+                                  [autocompleteOptions]="[1, 2, 3, 5]">
+                </hh-range-control>
+            </div>
+            <div *ngIf="showMoreDetails">
+                <div class="row">
+                    <mat-form-field class="col-3">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.Floor' | translate}}</mat-label>
+                        <mat-select formControlName="floorId">
+                            <mat-option [value]="null">
+                                {{'Common.All' | translate}}
+                            </mat-option>
+                            <mat-option *ngFor="let option of lookups.floors"
+                                        [value]="option.id">
+                                {{'Lookup.Floor.' + option.name | translate}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="col-3">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.DevelopmentType' | translate}}</mat-label>
+                        <mat-select formControlName="developmentTypeId">
+                            <mat-option [value]="null">
+                                {{'Common.All' | translate}}
+                            </mat-option>
+                            <mat-option *ngFor="let option of lookups.developments"
+                                        [value]="option.id">
+                                {{'Lookup.DevelopmentType.' + option.name | translate}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="col-3">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.BuildingMaterial' | translate}}</mat-label>
+                        <mat-select formControlName="buildingMaterialId">
+                            <mat-option [value]="null">
+                                {{'Common.All' | translate}}
+                            </mat-option>
+                            <mat-option *ngFor="let option of lookups.buildingMaterials"
+                                        [value]="option.id">
+                                {{'Lookup.BuildingMaterial.' + option.name | translate}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="col-3">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.BuildingFinishCondition' | translate}}</mat-label>
+                        <mat-select formControlName="buildingFinishConditionId">
+                            <mat-option [value]="null">
+                                {{'Common.All' | translate}}
+                            </mat-option>
+                            <mat-option *ngFor="let option of lookups.buildingFinishConditions"
+                                        [value]="option.id">
+                                {{'Lookup.BuildingFinishCondition.' + option.name | translate}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <hh-range-control class="col-4"
+                                      [label]="'ProfileAnnoucementForm.Details.BuildYear' | translate"
+                                      minControl="buildYearMin"
+                                      maxControl="buildYearMax"
+                                      [minValue]="1900">
+                    </hh-range-control>
+                    <hh-range-control class="col-4"
+                                      [label]="'ProfileAnnoucementForm.Details.NumberOfFloors' | translate"
+                                      minControl="numberOfFloorsMin"
+                                      maxControl="numberOfFloorsMax"
+                                      [minValue]="0">
+                    </hh-range-control>
+                </div>
+                <div class="row">
+                    <mat-form-field class="col-4">
+                        <mat-label>{{'Search.MainAnnouncement.Market' | translate}}</mat-label>
+                        <mat-select formControlName="marketTypeId">
+                            <mat-option [value]="null">
+                                {{'Common.All' | translate}}
+                            </mat-option>
+                            <mat-option *ngFor="let option of lookups.marketTypes"
+                                        [value]="option.id">
+                                {{'Lookup.MarketType.' + option.name | translate}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="col-5">
+                        <mat-label>{{'Search.MainAnnouncement.AdvertiserType' | translate}}</mat-label>
+                        <mat-select formControlName="advertiserTypeId">
+                            <mat-option [value]="null">
+                                {{'Common.All' | translate}}
+                            </mat-option>
+                            <mat-option *ngFor="let option of lookups.advertiserTypes"
+                                        [value]="option.id">
+                                {{'Lookup.AdvertiserType.' + option.name | translate}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="button-container">
+                <button mat-button
+                        color="primary"
+                        (click)="onMore()"><mat-icon>{{showMoreDetails ? 'expand_less' : 'expand_more'}}</mat-icon>{{showMoreDetails ? ('Common.Less' | translate) : ('Common.More' | translate)}}</button>
+                <button mat-button
+                        color="primary"
+                        (click)="onClear()">{{'Common.Clear' | translate}}</button>
+                <button mat-raised-button
+                        color="primary"
+                        (click)="onSearch()">{{'Common.Search' | translate}}</button>
+            </div>
+        </ng-container>
+    </mat-card-content>
+</mat-card>

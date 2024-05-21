@@ -1,0 +1,17 @@
+<div class="user-announcements">
+    <hh-announcement-filters (search)="onSearch($event)"
+                             [initCriteria]="initCriteriaFormUrl"></hh-announcement-filters>
+    <ng-container *ngIf="announcements$ | async as page">
+        <div class="user-announcements__list">
+            <hh-announcement-tile *ngFor="let announcement of page.items"
+                                  [announcement]="announcement"
+                                  [routerLink]="['/announcements', announcement.id]"
+                                  [state]="{formUserId: userId}">
+            </hh-announcement-tile>
+        </div>
+        <div class="user-announcements__paginator">
+            <hh-paginator [page]="page"
+                          (pageChanged)="onPageChanged($event)"></hh-paginator>
+        </div>
+    </ng-container>
+</div>

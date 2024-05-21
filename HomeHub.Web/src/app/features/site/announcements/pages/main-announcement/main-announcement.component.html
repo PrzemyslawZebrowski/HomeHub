@@ -1,0 +1,262 @@
+<div class="main-announcement container">
+    <ng-container *ngIf="announcement$ | async as announcement">
+        <div class="main-announcement__navigation">
+            <hh-back-button />
+        </div>
+        <div class="main-announcement__row row">
+            <div class="main-announcement__content col-9">
+                <div class="main-photo">
+                    <gallery gallerize
+                             [items]="galleryItems"
+                             thumbPosition="bottom"
+                             imageSize="cover"></gallery>
+                    <ng-container *ngIf="(isLoggedIn$ | async) === true">
+                        <div class="main-announcement-favorite"
+                                (click)="handleFavoriteAnnouncement(announcement); $event.stopImmediatePropagation();">
+                            <mat-icon [class.material-symbols-outlined]="!announcement.isFavorite">favorite</mat-icon>
+                        </div>
+                    </ng-container>
+                </div>
+                <div class="basic-information">
+                    <div class="title-and-address">
+                        <div class="title">
+                            {{announcement.title}}
+                        </div>
+                        <div class="address">
+                            {{announcement.address}}
+                        </div>
+                    </div>
+                    <div class="price">
+                        <div class="amount">
+                            {{ announcement.priceAmount | currency: announcement.priceCurrency.toString() }}
+                        </div>
+                        <div class="price-per-meter">
+                            {{announcement.priceAmount / announcement.area | currency:
+                            announcement.priceCurrency.toString()}}/<span [innerHTML]="'m&sup2'"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="details__title">
+                        {{'Search.MainAnnouncement.AnnouncementDetails' | translate}}
+                    </div>
+                    <div class="details__content">
+                        <div class="row details__row">
+                            <div class="col-6 name">
+                                {{'Search.MainAnnouncement.Area' | translate}}
+                            </div>
+                            <div class="col-6 value">
+                                {{announcement.area}} <span [innerHTML]="'m&sup2'"></span>
+                            </div>
+                        </div>
+                        <div class="row details__row">
+                            <div class="col-6 name">
+                                {{'Search.MainAnnouncement.OwnershipForm' | translate}}
+                            </div>
+                            <div class="col-6 value">
+                                {{ 'Lookup.OwnershipForm.' + announcement.ownershipFormName | translate }}
+                            </div>
+                        </div>
+                        <div class="row details__row">
+                            <div class="col-6 name">
+                                {{'Search.MainAnnouncement.NumberOfRooms' | translate}}
+                            </div>
+                            <div class="col-6 value">
+                                {{announcement.numberOfRooms}}
+                            </div>
+                        </div>
+                        <div class="row details__row">
+                            <div class="col-6 name">
+                                {{'Search.MainAnnouncement.BuildingFinishCondition' | translate}}
+                            </div>
+                            <div class="col-6 value">
+                                {{ 'Lookup.BuildingFinishCondition.' + announcement.buildingFinishConditionName |
+                                translate }}
+                            </div>
+                        </div>
+                        <div class="row details__row">
+                            <div class="col-6 name">
+                                {{'Search.MainAnnouncement.Floor' | translate}}
+                            </div>
+                            <div class="col-6 value">
+                                {{ 'Lookup.Floor.' + announcement.floorName | translate
+                                }}/{{announcement.numberOfFloors}}
+                            </div>
+                        </div>
+                        <div class="row details__row">
+                            <div class="col-6 name">
+                                {{'Search.MainAnnouncement.OutGoing' | translate}}
+                            </div>
+                            <div class="col-6 value">
+                                {{ (outGoingPossible ? 'Common.Yes' : 'Common.No') | translate }}
+                            </div>
+                        </div>
+                        <div class="row details__row">
+                            <div class="col-6 name">
+                                {{'Search.MainAnnouncement.ParkingSpace' | translate}}
+                            </div>
+                            <div class="col-6 value">
+                                <div class="col-6 value">
+                                    {{ (parkingPossible ? 'Common.Yes' : 'Common.No') | translate }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row details__row">
+                            <div class="col-6 name">
+                                {{'Search.MainAnnouncement.Heating' | translate}}
+                            </div>
+                            <div class="col-6 value">
+                                {{ 'Lookup.HeatingType.' + announcement.heatingTypeName | translate }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">
+                    <div class="description-title">
+                        {{'Search.MainAnnouncement.Description' | translate}}
+                    </div>
+                    <div class="description-content">
+                        {{announcement.description}}
+                    </div>
+                </div>
+                <div class="additional-details">
+                    <div class="additional-details__title">
+                        {{'Search.MainAnnouncement.AdditionalDetails' | translate}}
+                    </div>
+                    <div class="additional-details__content">
+                        <div class="row additional-details__row">
+                            <div class="col-3 name">
+                                {{'Search.MainAnnouncement.Market' | translate}}
+                            </div>
+                            <div class="col-9 value">
+                                {{ 'Lookup.MarketType.' + announcement.marketTypeName | translate }}
+                            </div>
+                        </div>
+                        <div class="row additional-details__row">
+                            <div class="col-3 name">
+                                {{'Search.MainAnnouncement.AdvertiserType' | translate}}
+                            </div>
+                            <div class="col-9 value">
+                                {{ 'Lookup.AdvertiserType.' + announcement.advertiserTypeName | translate }}
+                            </div>
+                        </div>
+                        <div class="row additional-details__row">
+                            <div class="col-3 name">
+                                {{'Search.MainAnnouncement.AvailableFrom' | translate}}
+                            </div>
+                            <div class="col-9 value">
+                                {{ announcement.availableFrom | date: dateFormat }}
+                            </div>
+                        </div>
+                        <div class="row additional-details__row">
+                            <div class="col-3 name">
+                                {{'Search.MainAnnouncement.BuldingYear' | translate}}
+                            </div>
+                            <div class="col-9 value">
+                                {{announcement.buildYear}}
+                            </div>
+                        </div>
+                        <div class="row additional-details__row">
+                            <div class="col-3 name">
+                                {{'Search.MainAnnouncement.DevelopmentType' | translate}}
+                            </div>
+                            <div class="col-9 value">
+                                {{ 'Lookup.DevelopmentType.' + announcement.developmentTypeName | translate }}
+                            </div>
+                        </div>
+                        <div class="row additional-details__row">
+                            <div class="col-3 name">
+                                {{'Search.MainAnnouncement.Windows' | translate}}
+                            </div>
+                            <div class="col-9 value">
+                                {{ 'Lookup.WindowType.' + announcement.windowTypeName | translate }}
+                            </div>
+                        </div>
+                        <div class="row additional-details__row">
+                            <div class="col-3 name">
+                                {{'Search.MainAnnouncement.Elevator' | translate}}
+                            </div>
+                            <div class="col-9 value">
+                                {{ (isElevator ? 'Common.Yes' : 'Common.No') | translate }}
+                            </div>
+                        </div>
+                        <div class="row additional-details__row">
+                            <div class="col-3 name">
+                                {{'Search.MainAnnouncement.Media' | translate}}
+                            </div>
+                            <div class="col-9 value">
+                                {{media ? media.join(', ') : ''}}
+                            </div>
+                        </div>
+                        <div class="row additional-details__row">
+                            <div class="col-3 name">
+                                {{'Search.MainAnnouncement.Security' | translate}}
+                            </div>
+                            <div class="col-9 value">
+                                {{security ? security.join(', ') : ''}}
+                            </div>
+                        </div>
+                        <div class="row additional-details__row">
+                            <div class="col-3 name">
+                                {{'Search.MainAnnouncement.Equipment' | translate}}
+                            </div>
+                            <div class="col-9 value">
+                                {{equipment ? equipment.join(', ') : ''}}
+                            </div>
+                        </div>
+                        <div class="row additional-details__row">
+                            <div class="col-3 name">
+                                {{'Search.MainAnnouncement.AdditionalDetails' | translate}}
+                            </div>
+                            <div class="col-9 value">
+                                {{additional ? additional.join(', ') : ''}}
+                            </div>
+                        </div>
+                        <div class="row additional-details__row">
+                            <div class="col-3 name">
+                                {{'Search.MainAnnouncement.BuildingMaterial' | translate}}
+                            </div>
+                            <div class="col-9 value">
+                                {{ 'Lookup.BuildingMaterial.' + announcement.buildingMaterialName | translate }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ng-container *ngIf="mapLoaded$ | async">
+                    <google-map #map="googleMap"
+                                [width]="null"
+                                [height]="null"
+                                [options]="mapOptions">
+                        <map-marker [options]="markerOptions">
+                        </map-marker>
+                    </google-map>
+                </ng-container>
+            </div>
+            <div class="col-3 main-announcement__contact">
+                <div class="contact-wrapper">
+                    <div class="image">
+                        <img src="/assets/images/default-photo.svg">
+                    </div>
+                    <div class="name">
+                        {{announcement.advertiserName}}
+                    </div>
+                    <div class="advertiser-type">
+                        {{ 'Lookup.AdvertiserType.' + announcement.advertiserTypeName | translate }}
+                    </div>
+                    <div class="phone">
+                        {{announcement.advertiserPhoneNumber}}
+                    </div>
+                    <div class="email">
+                        {{announcement.advertiserEmail}}
+                    </div>
+                    <div class="see-more">
+                        <a mat-button
+                           [routerLink]="['/users', announcement.createdBy]">
+                            {{'Common.SeeMoreAnnouncements' | translate }}
+                            <mat-icon iconPositionEnd>arrow_forward</mat-icon></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,190 @@
+<div class="summary">
+    <ng-container *ngIf="lookups$ | async as lookups">
+        <div class="section">
+            <div class="section__title">{{'ProfileAnnoucementForm.SubjectAndType.Head' | translate}}</div>
+            <div class="section__content">
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.SubjectAndType.Subject' | translate}}</div>
+                    <div class="col-9 value">
+                        {{ lookups.subjectsTypes | selectName: 'Lookup.AnnouncementSubject.': announcement.subjectTypeId }}
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.SubjectAndType.Type' | translate}}</div>
+                    <div class="col-9 value">
+                        {{ lookups.announcementTypes | selectName: 'Lookup.AnnouncementType.': announcement.typeId }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section__title">{{'ProfileAnnoucementForm.BasicInformation.Head' | translate}}</div>
+            <div class="section__content">
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.BasicInformation.Title' | translate}}</div>
+                    <div class="col-9 value">{{announcement.title}}</div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.BasicInformation.Price' | translate}}</div>
+                    <div class="col-9 value">
+                        {{announcement.priceAmount | currency: announcement.priceCurrency?.toString() : 'symbol'}}
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name"
+                         [innerHTML]="'ProfileAnnoucementForm.BasicInformation.Area' | translate"></div>
+                    <div class="col-9 value">
+                        {{announcement.area}} <span [innerHTML]="'m&sup2'"></span>
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.BasicInformation.Room' | translate}}</div>
+                    <div class="col-9 value">{{announcement.numberOfRooms}}</div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.BasicInformation.AdvertiserType' | translate}}
+                    </div>
+                    <div class="col-9 value">
+                        {{ lookups.advertiserTypes | selectName: 'Lookup.AdvertiserType.': announcement.advertiserTypeId }}
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.BasicInformation.MarketType' | translate}}</div>
+                    <div class="col-9 value">
+                        {{ lookups.marketTypes | selectName: 'Lookup.MarketType.': announcement.marketTypeId }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section__title">{{'ProfileAnnoucementForm.Details.Head' | translate}}</div>
+            <div class="section__content">
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Details.Description' | translate}}</div>
+                    <div class="col-9 value">{{announcement.description}}</div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Details.DevelopmentType' | translate}}</div>
+                    <div class="col-9 value">
+                        {{ lookups.developments | selectName: 'Lookup.DevelopmentType.': announcement.developmentTypeId}}
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Details.Floor' | translate}}</div>
+                    <div class="col-9 value">
+                        {{ lookups.floors | selectName: 'Lookup.Floor.': announcement.floorId }}
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Details.NumberOfFloors' | translate}}</div>
+                    <div class="col-9 value">{{announcement.numberOfFloors}}</div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Details.BuildingMaterial' | translate}}</div>
+                    <div class="col-9 value">
+                        {{ lookups.buildingMaterials | selectName: 'Lookup.BuildingMaterial.':announcement.buildingMaterialId }}
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Details.WindowType' | translate}}</div>
+                    <div class="col-9 value">
+                        {{lookups.windows | selectName: 'Lookup.WindowType.': announcement.windowTypeId }}
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Details.HeatingType' | translate}}</div>
+                    <div class="col-9 value">
+                        {{ lookups.heatings | selectName: 'Lookup.HeatingType.': announcement.heatingTypeId }}
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Details.BuildYear' | translate}}</div>
+                    <div class="col-9 value">{{announcement.buildYear}}</div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Details.BuildingFinishCondition' | translate}}
+                    </div>
+                    <div class="col-9 value">
+                        {{ lookups.buildingFinishConditions | selectName: 'Lookup.BuildingFinishCondition.': announcement.buildingFinishConditionId }}
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Details.OwnershipForm' | translate}}</div>
+                    <div class="col-9 value">
+                        {{ lookups.ownerships | selectName: 'Lookup.OwnershipForm.': announcement.ownershipFormId }}
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Details.AvailableFrom' | translate}}</div>
+                    <div class="col-9 value">{{announcement.availableFrom | date: 'dd.MM.yyyy'}}</div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Details.Additional' | translate}}</div>
+                    <div class="col-9 value">
+                        {{ lookups.details | selectName: 'Lookup.AdditionalDetail.': announcement.additionalDetailIds }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section__title">{{'ProfileAnnoucementForm.Multimedia.Head' | translate}}</div>
+            <div class="section__content">
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Multimedia.VideoUrl' | translate}}</div>
+                    <div class="col-9 value"><a [href]="announcement.videoUrl"
+                           target="_blank">{{announcement.videoUrl}}</a>
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Multimedia.VirtualWalkUrl' | translate}}</div>
+                    <div class="col-9 value"><a [href]="announcement.virtualWalkUrl"
+                           target="_blank">{{announcement.virtualWalkUrl}}</a>
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Multimedia.Photos' | translate}}</div>
+                    <div class="col-9 value value--photos">
+                        <div class="photo"
+                             *ngFor="let photo of announcement.photos; let i = index"
+                             [lightbox]="i"
+                             [gallery]="galleryId">
+                            <img [src]="photo.url">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section__title">{{'ProfileAnnoucementForm.Localization.Head' | translate}}</div>
+            <div class="section__content">
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.Localization.Address' | translate}}</div>
+                    <div class="col-9 value">{{announcement.address}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section__title">{{'ProfileAnnoucementForm.ContactDetails.Head' | translate}}</div>
+            <div class="section__content">
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.ContactDetails.Name' | translate}}</div>
+                    <div class="col-9 value">{{announcement.advertiserName}}</div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.ContactDetails.Phone' | translate}}</div>
+                    <div class="col-9 value">{{announcement.advertiserPhoneNumber}}
+                    </div>
+                </div>
+                <div class="row section__row">
+                    <div class="col-3 name">{{'ProfileAnnoucementForm.ContactDetails.Email' | translate}}</div>
+                    <div class="col-9 value">{{announcement.advertiserEmail}}</div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

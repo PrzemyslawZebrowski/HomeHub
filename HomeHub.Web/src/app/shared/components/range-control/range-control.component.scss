@@ -1,0 +1,28 @@
+.range {
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        width: 100%;
+    }
+
+    &__controls {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+
+        mat-form-field:first-of-type {
+            ::ng-deep .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+                border-top-right-radius: 0 !important;
+                border-bottom-right-radius: 0 !important;
+            }
+        }
+
+        mat-form-field:last-of-type {
+            ::ng-deep .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
+                border-top-left-radius: 0 !important;
+                border-bottom-left-radius: 0 !important;
+            }
+        }
+    }
+}

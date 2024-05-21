@@ -1,0 +1,17 @@
+<!-- [style.width.px]="width"
+[style.height.px]="height" -->
+<div class="tile"
+     [routerLink]="['/announcements',announcement.id]">
+    <img [src]="announcement.photoUrl">
+    <div class="tile__bar">
+        <div class="price">
+            {{ announcement.priceAmount | currency: announcement.priceCurrency.toString() }}
+        </div>
+        <div class="address">
+            {{ announcement.address }}
+        </div>
+        <div class="area">
+            {{ announcement.area }}<span [innerHTML]="'m&sup2'"></span>
+        </div>
+    </div>
+</div>

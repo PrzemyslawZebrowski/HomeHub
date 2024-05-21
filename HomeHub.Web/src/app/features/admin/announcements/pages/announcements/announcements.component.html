@@ -1,0 +1,26 @@
+<div class="announcements">
+    <ng-container *ngIf="announcements$ | async as page">
+        <div class="row"
+             [formGroup]="statusFormGroup">
+            <mat-form-field class="col-12">
+                <mat-label>{{'Admin.Announcements.Status' | translate}}</mat-label>
+                <mat-select formControlName="statusId">
+                    <ng-container *ngIf="statuses$ | async as statuses">
+                        <mat-option *ngFor="let status of statuses"
+                                    [value]="status.id">{{ 'Lookup.Status.' + status.name | translate }}
+                        </mat-option>
+                    </ng-container>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="announcements__list">
+            <hh-announcement-admin-tile *ngFor="let announcement of page.items"
+                                        [announcement]="announcement">
+            </hh-announcement-admin-tile>
+        </div>
+        <div class="announcements__paginator">
+            <hh-paginator [page]="page"
+                          (pageChanged)="onPageChanged($event)"></hh-paginator>
+        </div>
+    </ng-container>
+</div>

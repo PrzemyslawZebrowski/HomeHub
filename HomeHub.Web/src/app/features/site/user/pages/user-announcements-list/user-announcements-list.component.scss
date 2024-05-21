@@ -1,0 +1,16 @@
+.user-announcements {
+    &__list {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    hh-announcement-tile {
+        cursor: pointer;
+    }
+
+    &__paginator {
+        margin: 15px 0;
+    }
+}

@@ -1,0 +1,9 @@
+@use 'variables';
+
+mat-sidenav-container {
+    min-height: calc(100vh - variables.$header-height);
+}
+
+.container {
+    padding: 20px 0;
+}

@@ -1,0 +1,74 @@
+@use 'variables';
+
+.user-bar {
+    background-color: variables.$accent-200;
+    padding: 15px 0;
+    background-image: url("/assets/images/skyline.svg");
+    background-position: right 25% center;
+    background-repeat: no-repeat;
+    background-size: auto 150%;
+    background-blend-mode: overlay;
+
+    @media (max-width: 500px) {
+        background-blend-mode: screen;
+    }
+}
+
+.user {
+    $self: &;
+
+    .details-wrapper {
+        display: flex;
+        gap: 10px;
+
+        #{$self}__image {
+            width: 150px;
+            height: 150px;
+            max-width: 150px;
+            max-height: 150px;
+            min-width: 150px;
+            min-height: 150px;
+            border-radius: 50%;
+            background-color: white;
+            border: 3px variables.$accent solid;
+            contain: paint;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        #{$self}__details {
+            display: flex;
+            flex-direction: column;
+
+            #{$self}__name {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            #{$self}__email {
+                margin-top: auto;
+            }
+        }
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    // &__image {
+    //     img {
+    //         max-width: 100%;
+    //         max-height: 100%;
+    //         object-fit: cover;
+    //         object-position: center;
+    //     }
+    // }
+
+}

@@ -1,0 +1,39 @@
+<div class="photos">
+    <div class="photos__upload">
+        <input #input
+               multiple
+               type="file"
+               accept="image/*"
+               [hidden]="true"
+               (change)="onImageUplod($event)">
+        <button mat-raised-button
+                color="primary"
+                (click)="input.click()">
+            <mat-icon>add</mat-icon> {{'ProfileAnnoucementForm.Multimedia.AddPhoto' | translate}}
+        </button>
+    </div>
+
+    <div class="photos__preview">
+        <ng-container *ngFor="let photo of photos.value; index as i">
+            <div class="photo"
+                 [class.photo--main]="photo.isMainPhoto">
+                <img [src]="photo.url">
+                <div class="photo__actions">
+                    <button *ngIf="!photo.isMainPhoto"
+                            mat-icon-button
+                            color="accent"
+                            [matTooltip]="'ProfileAnnoucementForm.Multimedia.SetAsMainPhoto' | translate"
+                            (click)="setAsMainPhoto(i)">
+                        <mat-icon>image</mat-icon>
+                    </button>
+                    <button mat-icon-button
+                            color="accent"
+                            [matTooltip]="'ProfileAnnoucementForm.Multimedia.RemovePhoto' | translate"
+                            (click)="removePhoto(i)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

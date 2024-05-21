@@ -1,0 +1,14 @@
+<mat-nav-list>
+    <a mat-list-item
+       routerLink="/admin/users"
+       *hhHasRole="([userRoleEnum.Admin])">
+        <mat-icon matListItemIcon>group</mat-icon>
+        <span matListItemTitle>{{'Admin.Navbar.Users' | translate}}</span>
+    </a>
+    <a mat-list-item
+       routerLink="/admin/announcements"
+       *hhHasRole="([userRoleEnum.Admin, userRoleEnum.Moderator])">
+        <mat-icon matListItemIcon>library_books</mat-icon>
+        <span matListItemTitle>{{'Admin.Navbar.Announcements' | translate}}</span>
+    </a>
+</mat-nav-list>

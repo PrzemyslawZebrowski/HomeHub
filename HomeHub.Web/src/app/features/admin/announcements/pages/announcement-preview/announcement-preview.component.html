@@ -1,0 +1,33 @@
+<div class="navigation">
+    <hh-back-button />
+</div>
+<mat-card class="preview">
+    <mat-card-content>
+        <ng-container *ngIf="announcement$ | async as announcement">
+            <div class="preview__status">Status:
+                <span [ngClass]="{
+                    'closed': announcement.statusId === announcementStatus.Closed,
+                    'approved': announcement.statusId === announcementStatus.Approved,
+                    'pending': announcement.statusId === announcementStatus.Pending,
+                    'refused': announcement.statusId === announcementStatus.Refused
+                    }">{{'Lookup.Status.' + announcement.statusName | translate}}</span>
+            </div>
+            <hh-announcement-summary [announcement]="announcement"></hh-announcement-summary>
+            <div class="preview__action-buttons"
+                 *ngIf="announcement.statusId === announcementStatus.Pending">
+                <button mat-raised-button
+                        color="primary"
+                        (click)="onApprove()"
+                        [disabled]="(isStatusChanging$ | async) === true">
+                    {{'Common.Approve'| translate}}
+                </button>
+                <button mat-raised-button
+                        color="warn"
+                        (click)="onRefuse()"
+                        [disabled]="(isStatusChanging$ | async) === true">
+                    {{'Common.Refuse' | translate}}
+                </button>
+            </div>
+        </ng-container>
+    </mat-card-content>
+</mat-card>

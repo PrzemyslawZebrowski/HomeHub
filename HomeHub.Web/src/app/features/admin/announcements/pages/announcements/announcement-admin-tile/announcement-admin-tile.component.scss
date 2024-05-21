@@ -1,0 +1,105 @@
+@use 'variables';
+
+.tile {
+    cursor: pointer;
+    position: relative;
+    background-color: white;
+    display: flex;
+    padding: 10px;
+    border-radius: 15px;
+    gap: 10px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
+    &__photo {
+        display: grid;
+        width: 200px;
+        height: 150px;
+        max-width: 200px;
+        max-height: 150px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .title {
+            font-weight: bold;
+            font-size: 18px;
+
+        }
+
+        .date-and-address {
+            display: flex;
+            font-weight: bold;
+            align-items: center;
+            gap: 5px;
+
+            .create-date {
+                background-color: variables.$accent-200;
+                border-radius: 7px;
+                padding: 2px 7px;
+            }
+
+            .address {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: variables.$accent-200;
+                border-radius: 7px;
+                padding: 2px 7px;
+
+                mat-icon {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .status {
+            margin-top: auto;
+
+            .closed {
+                background-color: variables.$error;
+            }
+
+            .refused {
+                background-color: variables.$error;
+            }
+
+            .pending {
+                background-color: variables.$primary-50;
+            }
+
+            .approved {
+                background-color: darkgreen;
+            }
+        }
+    }
+
+    &__price-details {
+        margin-left: auto;
+
+        .price {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .area {
+            font-size: 17px;
+            font-weight: 600;
+            color: gray;
+        }
+    }
+}

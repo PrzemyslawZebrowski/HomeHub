@@ -1,0 +1,14 @@
+pool:
+  name: Azure Pipelines
+steps:
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build'
+  inputs:
+    projects: '**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet unit tests'
+  inputs:
+    command: test
+    projects: '**/*Tests.csproj'
+    arguments: '--collect "Code coverage"'

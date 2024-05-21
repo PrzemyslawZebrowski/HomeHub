@@ -1,0 +1,54 @@
+<div class="details"
+     [formGroup]="form">
+    <ng-container *ngIf="advertisers$ | async as advertisers">
+        <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <mat-form-field class="col w-400">
+                        <mat-label>{{'ProfileAnnoucementForm.ContactDetails.Name' | translate}}</mat-label>
+                        <input matInput
+                               type="text"
+                               formControlName="name">
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field class="col w-200">
+                        <mat-label>{{'ProfileAnnoucementForm.ContactDetails.Phone' | translate}}</mat-label>
+                        <input matInput
+                               type="text"
+                               [pattern]="phonePattern"
+                               formControlName="phoneNumber">
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field class="col w-300">
+                        <mat-label>{{'ProfileAnnoucementForm.ContactDetails.Email' | translate}}</mat-label>
+                        <input matInput
+                               type="text"
+                               formControlName="contactEmail">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <mat-radio-group class="col w-300"
+                                     formControlName="advertiserTypeId">
+                        <mat-label>{{'ProfileAnnoucementForm.BasicInformation.AdvertiserType' | translate}}</mat-label>
+                        <mat-radio-button *ngFor="let advertiser of advertisers"
+                                          [value]="advertiser.id">
+                            {{'Lookup.AdvertiserType.' + advertiser.name | translate}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+        </div>
+        <button mat-raised-button
+                color="primary"
+                (click)="save()"
+                [disabled]="form.pristine"
+                [hhLoading]="isSaving$ | async"
+                type="button">{{'Common.Save' | translate}}</button>
+    </ng-container>
+</div>

@@ -1,0 +1,36 @@
+<div class="profile-announcements">
+    <ng-container *ngIf="announcements$ | async as page">
+        <div class="row"
+             [formGroup]="formGroup">
+            <mat-form-field class="col-8">
+                <mat-label>{{'ProfileAnnoucementForm.BasicInformation.Title' | translate}}</mat-label>
+                <input matInput
+                       type="text"
+                       formControlName="title">
+            </mat-form-field>
+            <ng-container *ngIf="statuses$ | async as statuses">
+                <mat-form-field class="col-4">
+                    <mat-label>{{'Admin.Announcements.Status' | translate}}</mat-label>
+                    <mat-select formControlName="statusId">
+                        <mat-option [value]="null">
+                            {{'ProfileAnnouncements.ProfileAnnouncementTile.All' | translate}}
+                        </mat-option>
+                        <mat-option *ngFor="let status of statuses"
+                                    [value]="status.id">{{ 'Lookup.Status.' + status.name | translate }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </ng-container>
+        </div>
+        <div class="profile-announcements__list">
+            <hh-profile-announcement-tile *ngFor="let announcement of page.items"
+                                          [announcement]="announcement"
+                                          (announcementClosed)="reloadAnnouncements()">
+            </hh-profile-announcement-tile>
+        </div>
+        <div class="profile-announcements__paginator">
+            <hh-paginator [page]="page"
+                          (pageChanged)="onPageChanged($event)"></hh-paginator>
+        </div>
+    </ng-container>
+</div>

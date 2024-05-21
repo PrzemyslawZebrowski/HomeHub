@@ -1,0 +1,81 @@
+@use 'variables';
+
+.tile {
+    position: relative;
+    background-color: white;
+    display: flex;
+    padding: 10px;
+    border-radius: 15px;
+    gap: 20px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
+    &__photo {
+        display: grid;
+        width: 280px;
+        height: 200px;
+        max-width: 280px;
+        max-height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            margin: auto;
+            width: 280px;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .title {
+            font-weight: bold;
+            font-size: 22px;
+
+        }
+
+        .address {
+            font-weight: 10px;
+        }
+
+        .details {
+            display: flex;
+            gap: 20px;
+            font-size: 18px;
+            font-weight: bold;
+
+            .price {
+                font-size: 22px;
+                font-weight: bolder;
+            }
+        }
+    }
+
+    .advertiser-type {
+        margin-top: auto;
+        margin-bottom: 10px;
+        font-weight: 12px;
+        color: gray;
+        font-weight: 600;
+    }
+
+    &__favorite {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+        color: variables.$primary-50;
+
+        mat-icon {
+            font-size: 30px;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

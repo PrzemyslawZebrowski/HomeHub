@@ -1,0 +1,72 @@
+<div class="basic-information"
+     [formGroup]="form">
+    <div class="row">
+        <mat-form-field class="col w-600">
+            <mat-label>{{'ProfileAnnoucementForm.BasicInformation.Title' | translate}}</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="title">
+        </mat-form-field>
+    </div>
+
+    <ng-container *ngIf="lookups$ | async as lookups">
+        <div class="row">
+            <mat-form-field class="col w-400">
+                <mat-label>{{'ProfileAnnoucementForm.BasicInformation.Price' | translate}}</mat-label>
+                <input matInput
+                       type="number"
+                       formControlName="priceAmount">
+            </mat-form-field>
+
+            <mat-form-field class="col w-200">
+                <mat-label>{{'ProfileAnnoucementForm.BasicInformation.Currency' | translate}}</mat-label>
+                <mat-select formControlName="priceCurrency">
+                    <mat-option *ngFor="let currency of lookups.currency"
+                                [value]="currency">
+                        {{currency}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </ng-container>
+
+    <div class="row">
+        <mat-form-field class="col w-300">
+            <mat-label [innerHTML]="'ProfileAnnoucementForm.BasicInformation.Area' | translate"></mat-label>
+            <input matInput
+                   type="number"
+                   min="0"
+                   formControlName="area">
+        </mat-form-field>
+
+        <mat-form-field class="col w-200">
+            <mat-label>{{'ProfileAnnoucementForm.BasicInformation.Room' | translate}}</mat-label>
+            <input matInput
+                   type="number"
+                   min="0"
+                   formControlName="numberOfRooms">
+        </mat-form-field>
+    </div>
+
+    <ng-container *ngIf="lookups$ | async as lookups">
+        <div class="row">
+            <mat-radio-group class="col w-300"
+                             formControlName="advertiserTypeId">
+                <mat-label>{{'ProfileAnnoucementForm.BasicInformation.AdvertiserType' | translate}}</mat-label>
+                <mat-radio-button *ngFor="let subject of lookups.advertisers"
+                                  [value]="subject.id">
+                    {{'Lookup.AdvertiserType.' + subject.name | translate}}
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <mat-radio-group class="col w-300"
+                             formControlName="marketTypeId">
+                <mat-label>{{'ProfileAnnoucementForm.BasicInformation.MarketType' | translate}}</mat-label>
+                <mat-radio-button *ngFor="let type of lookups.markets"
+                                  [value]="type.id">
+                    {{'Lookup.MarketType.' + type.name | translate}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </ng-container>
+</div>

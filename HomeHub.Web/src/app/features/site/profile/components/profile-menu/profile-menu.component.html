@@ -1,0 +1,25 @@
+<div class="menu">
+    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+    <nav class="container"
+         mat-tab-nav-bar
+         [tabPanel]="tabPanel">
+
+        <a mat-tab-link
+           routerLinkActive
+           #rla="routerLinkActive"
+           [active]="rla.isActive"
+           routerLink="announcements"> {{'ProfileMenu.Announcements' | translate}} </a>
+
+        <a mat-tab-link
+           routerLinkActive
+           #rla="routerLinkActive"
+           [active]="rla.isActive"
+           routerLink="favorite"> {{'ProfileMenu.Favorite' | translate}} </a>
+
+        <a mat-tab-link
+           routerLinkActive
+           #rla="routerLinkActive"
+           [active]="rla.isActive"
+           routerLink="details"> {{'ProfileMenu.Profile' | translate}} </a>
+    </nav>
+</div>

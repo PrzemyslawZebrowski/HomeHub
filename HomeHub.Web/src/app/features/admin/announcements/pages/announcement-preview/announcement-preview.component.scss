@@ -1,0 +1,39 @@
+@use 'variables';
+
+.navigation {
+    margin: -10px 0 10px;
+}
+
+.preview {
+    &__status {
+        text-align: right;
+
+        span {
+            font-weight: bold;
+
+            &.closed {
+                color: variables.$error;
+            }
+
+            &.refused {
+                color: variables.$error;
+            }
+
+            &.pending {
+                color: variables.$primary-50;
+            }
+
+            &.approved {
+                color: darkgreen;
+            }
+        }
+
+    }
+
+    &__action-buttons {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: end;
+    }
+}

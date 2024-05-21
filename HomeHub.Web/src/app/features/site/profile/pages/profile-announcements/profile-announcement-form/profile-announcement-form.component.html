@@ -1,0 +1,86 @@
+<mat-card>
+    <mat-card-content>
+        <mat-stepper #stepper>
+            <mat-step [stepControl]="subjectAndTypeFormGroup">
+                <ng-template matStepLabel>{{ 'ProfileAnnoucementForm.SubjectAndType.Head'| translate}}</ng-template>
+                <ng-template matStepContent>
+                    <hh-profile-announcement-subject-and-type-form
+                                                                   [form]="subjectAndTypeFormGroup"></hh-profile-announcement-subject-and-type-form>
+                </ng-template>
+            </mat-step>
+
+            <mat-step [stepControl]="basicInformationFormGroup">
+                <ng-template matStepLabel>{{ 'ProfileAnnoucementForm.BasicInformation.Head'| translate}}</ng-template>
+                <ng-template matStepContent>
+                    <hh-profile-announcement-basic-information-form
+                                                                    [form]="basicInformationFormGroup"></hh-profile-announcement-basic-information-form>
+                </ng-template>
+            </mat-step>
+
+            <mat-step [stepControl]="detailsFormGroup">
+                <ng-template matStepLabel>{{ 'ProfileAnnoucementForm.Details.Head'| translate}}</ng-template>
+                <ng-template matStepContent>
+                    <hh-profile-announcement-details-form
+                                                          [form]="detailsFormGroup"></hh-profile-announcement-details-form>
+                </ng-template>
+            </mat-step>
+
+            <mat-step [stepControl]="multimediaFormGroup">
+                <ng-template matStepLabel>{{ 'ProfileAnnoucementForm.Multimedia.Head'| translate}}</ng-template>
+                <ng-template matStepContent>
+                    <hh-profile-announcement-multimedia-form
+                                                             [form]="multimediaFormGroup"></hh-profile-announcement-multimedia-form>
+                </ng-template>
+            </mat-step>
+
+            <mat-step [stepControl]="localizationFormGroup">
+                <ng-template matStepLabel>{{ 'ProfileAnnoucementForm.Localization.Head'| translate}}</ng-template>
+                <ng-template matStepContent>
+                    <hh-profile-announcement-localization-form
+                                                               [form]="localizationFormGroup"></hh-profile-announcement-localization-form>
+                </ng-template>
+            </mat-step>
+
+            <mat-step [stepControl]="contactDetailsFormGroup">
+                <ng-template matStepLabel>{{ 'ProfileAnnoucementForm.ContactDetails.Head'| translate}}</ng-template>
+                <ng-template matStepContent>
+                    <hh-profile-announcement-contact-details-form
+                                                                  [form]="contactDetailsFormGroup"></hh-profile-announcement-contact-details-form>
+                </ng-template>
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>{{ 'ProfileAnnoucementForm.Summary'| translate}}</ng-template>
+                <ng-template matStepContent>
+                    <hh-profile-announcement-summary-form
+                                                          [form]="announcementformGroup"></hh-profile-announcement-summary-form>
+                </ng-template>
+            </mat-step>
+        </mat-stepper>
+
+        <div class="buttons">
+            <ng-container *ngIf="stepper.selectedIndex !== 0">
+                <button mat-flat-button
+                        (click)="stepper.previous()"
+                        type="button">{{ 'Common.Back'| translate}}</button>
+            </ng-container>
+
+            <ng-container *ngIf="stepper.selectedIndex !== stepper.steps.length - 1; else saveButton">
+                <button mat-raised-button
+                        color="primary"
+                        (click)="stepper.next()"
+                        type="button">{{ 'Common.Next'| translate}}</button>
+            </ng-container>
+
+            <ng-template #saveButton>
+                <button mat-raised-button
+                        color="primary"
+                        (click)="save()"
+                        [hhLoading]="isSaveing$ | async"
+                        type="button">{{'Common.' + (!announcementId ? "Add" : "Save") | translate}}</button>
+            </ng-template>
+
+        </div>
+
+    </mat-card-content>
+</mat-card>

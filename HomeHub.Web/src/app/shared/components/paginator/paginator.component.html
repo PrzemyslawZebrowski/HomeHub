@@ -1,0 +1,18 @@
+<div class="paginator"
+     [hidden]="hidden"
+     [class.shadow]="options.showShadow">
+    <mat-paginator (page)="handlePageEvent($event)"
+                   [pageSize]="pageSize"
+                   [length]="totalCount"
+                   [pageIndex]="pageNumber"
+                   [showFirstLastButtons]="true"
+                   aria-label="Select page">
+    </mat-paginator>
+</div>
+<div class="no-results"
+     *ngIf="hidden === true">
+    <img src="/assets/images/no-results.svg">
+    <div class="message">
+        {{'Paginator.NoResults' | translate}}
+    </div>
+</div>

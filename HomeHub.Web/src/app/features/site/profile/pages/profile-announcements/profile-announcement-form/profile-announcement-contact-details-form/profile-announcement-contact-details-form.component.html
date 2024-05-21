@@ -1,0 +1,30 @@
+<div class="contact-details"
+     [formGroup]="form">
+    <div class="row">
+        <mat-form-field class="col w-400">
+            <mat-label>{{'ProfileAnnoucementForm.ContactDetails.Name' | translate}}</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="advertiserName">
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field class="col w-200">
+            <mat-label>{{'ProfileAnnoucementForm.ContactDetails.Phone' | translate}}</mat-label>
+            <input matInput
+                   type="text"
+                   [pattern]="phonePattern"
+                   formControlName="advertiserPhoneNumber">
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field class="col w-300">
+            <mat-label>{{'ProfileAnnoucementForm.ContactDetails.Email' | translate}}</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="advertiserEmail">
+        </mat-form-field>
+    </div>
+</div>

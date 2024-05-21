@@ -1,0 +1,38 @@
+<div [formGroup]="form"
+     class="range">
+    <mat-label class="range__label">{{label}}</mat-label>
+    <div class="range__controls">
+        <mat-form-field>
+            <span matTextSuffix
+                  [innerHTML]="unit"></span>
+            <input matInput
+                   type="number"
+                   [placeholder]="'Common.Min' | translate"
+                   [formControlName]="minControl"
+                   [matAutocomplete]="minAuto"
+                   [min]="minValue"
+                   (blur)="onBlur(minControl)">
+        </mat-form-field>
+        <mat-form-field>
+            <span matTextSuffix
+                  [innerHTML]="unit"></span>
+            <input matInput
+                   type="number"
+                   [placeholder]="'Common.Max' | translate"
+                   [formControlName]="maxControl"
+                   [matAutocomplete]="maxAuto"
+                   [min]="minValue"
+                   (blur)="onBlur(maxControl)">
+        </mat-form-field>
+    </div>
+</div>
+
+<mat-autocomplete #minAuto="matAutocomplete">
+    <mat-option *ngFor="let option of autocompleteOptions"
+                [value]="option">{{option}}</mat-option>
+</mat-autocomplete>
+
+<mat-autocomplete #maxAuto="matAutocomplete">
+    <mat-option *ngFor="let option of autocompleteOptions"
+                [value]="option">{{option}}</mat-option>
+</mat-autocomplete>

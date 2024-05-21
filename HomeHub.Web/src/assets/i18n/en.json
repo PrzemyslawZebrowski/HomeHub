@@ -1,0 +1,307 @@
+{
+    "Common": {
+        "Save": "Save",
+        "Close": "Close",
+        "Add": "Add",
+        "Remove": "Remove",
+        "Next": "Next",
+        "Back": "Back",
+        "Edit": "Edit",
+        "Approve": "Approve",
+        "Refuse": "Refuse",
+        "Yes": "Yes",
+        "No": "No",
+        "Min": "Min",
+        "Max": "Max",
+        "All": "All",
+        "Search": "Search",
+        "More": "More",
+        "Less": "Less",
+        "Clear": "Clear",
+        "SeeMoreAnnouncements": "See more announcements",
+        "NoData": "No data",
+        "Anonymous": "Anonymous user"
+    },
+    "Navbar": {
+        "Sale": "Sale",
+        "LongTermRent": "Long-term rent",
+        "ShortTermRent": "Short-term rent",
+        "MyAccount": "My account",
+        "AddAnnouncement": "Add announcement",
+        "Menu": {
+            "AdminPanel": "Admin panel",
+            "Announcements": "Announcements",
+            "Favorite": "Favorite",
+            "Profile": "Profile",
+            "Logout": "Logout"
+        }
+    },
+    "Home": {
+        "RecommendedAnnouncementsTitle": "Recommended",
+        "LatestAnnouncementsTitle": "See latest announcements"
+    },
+    "Search": {
+        "Address": {
+            "Distance": "Distance"
+        },
+        "Announcements": {
+            "OneRoom": "room",
+            "LessThanFiveRooms": "rooms",
+            "MoreThanFourRooms": "rooms"
+        },
+        "MainAnnouncement": {
+            "AnnouncementDetails": "Announcement's details",
+            "Area": "Area",
+            "OwnershipForm": "Form of ownership",
+            "NumberOfRooms": "Number of rooms",
+            "BuildingFinishCondition": "Finish condition of building",
+            "Floor": "Floor",
+            "OutGoing": "Balcony / garden / terrace",
+            "ParkingSpace": "Parking space",
+            "Heating": "Heating",
+            "Description": "Description",
+            "AdditionalDetails": "Additional details",
+            "Market": "Market",
+            "AdvertiserType": "Type of advertiser",
+            "AvailableFrom": "Available from",
+            "BuldingYear": "Year of building",
+            "DevelopmentType": "Type of development",
+            "Windows": "Windows",
+            "Elevator": "Elevator",
+            "Media": "Media",
+            "Security": "Security",
+            "Equipment": "Equipment",
+            "BuildingMaterial": "Bulding's material",
+            "Price": "Price"
+        }
+    },
+    "Admin": {
+        "Navbar": {
+            "Users": "Users",
+            "Announcements": "Announcements"
+        },
+        "Users": {
+            "Email": "Email",
+            "Role": "Role",
+            "Menu": {
+                "SetRole": "Set role"
+            }
+        },
+        "Announcements": {
+            "Status": "Status"
+        }
+    },
+    "ErrorPages": {
+        "Forbidden": "You shouldn't be here. Click",
+        "NotFound": "Page doesn't exist. Click",
+        "Here": "here",
+        "ToMainPage": "to back to main page."
+    },
+    "ProfileAnnouncements": {
+        "ProfileAnnouncementTile": {
+            "Created": "Created:",
+            "All": "All"
+        }
+    },
+    "ProfileDetails": {
+        "Name": "Name",
+        "PhoneNumber": "Phone number",
+        "ContactEmail": "Contact email",
+        "AdvertiserType": "Advertiser type"
+    },
+    "ProfileMenu": {
+        "Announcements": "Announcements",
+        "Favorite": "Favorite",
+        "Profile": "Profile"
+    },
+    "ProfileAnnoucementForm": {
+        "SubjectAndType": {
+            "Head": "Subject and Type",
+            "Subject": "Subject",
+            "Type": "Type"
+        },
+        "BasicInformation": {
+            "Head": "Basic information",
+            "Title": "Title",
+            "Price": "Price",
+            "Currency": "Currency",
+            "Room": "Rooms",
+            "AdvertiserType": "Advertiser type",
+            "MarketType": "Market type",
+            "Area": "Area in m&sup2"
+        },
+        "Details": {
+            "Head": "Details",
+            "Description": "Description",
+            "DevelopmentType": "Development type",
+            "Floor": "Floor",
+            "NumberOfFloors": "Number of floors",
+            "BuildingMaterial": "Building material",
+            "WindowType": "Windows",
+            "HeatingType": "Heating",
+            "BuildYear": "Year of building",
+            "BuildingFinishCondition": "Finish condition of building",
+            "OwnershipForm": "Form of ownership",
+            "AvailableFrom": "Available from",
+            "Media": "Media",
+            "Security": "Security",
+            "Equipment": "Equipment",
+            "Additional": "Additional information",
+            "Remote": "Remote control"
+        },
+        "Multimedia": {
+            "Head": "Multimedia",
+            "VideoUrl": "Video url",
+            "VirtualWalkUrl": "Virtual walku url",
+            "Photos": "Photos",
+            "AddPhoto": "Add photo",
+            "RemovePhoto": "Remove photo",
+            "SetAsMainPhoto": "Set as main photo"
+        },
+        "Localization": {
+            "Head": "Localization",
+            "Address": "Adress"
+        },
+        "ContactDetails": {
+            "Head": "Contact details",
+            "Name": "Name and surname",
+            "Phone": "Phone number",
+            "Email": "Email"
+        },
+        "Summary": "Summary"
+    },
+    "UserRoleDialog": {
+        "Role": "Role"
+    },
+    "Lookup": {
+        "Role": {
+            "Admin": "Admin",
+            "Moderator": "Moderator",
+            "User": "User"
+        },
+        "AdvertiserType": {
+            "Owner": "Owner",
+            "Broker": "Broker"
+        },
+        "MarketType": {
+            "Primary": "Primary",
+            "AfterMarket": "Arfer market"
+        },
+        "AnnouncementSubject": {
+            "Apartment": "Apartment",
+            "House": "House"
+        },
+        "AnnouncementType": {
+            "Rent": "Rent",
+            "Sale": "Sale"
+        },
+        "BuildingFinishCondition": {
+            "ForLiving": "For living",
+            "ForFinishing": "For finishing",
+            "ForRenovation": "For renovation"
+        },
+        "BuildingMaterial": {
+            "Brick": "Brick",
+            "Wood": "Wood",
+            "HollowBlock": "Hollow block",
+            "ExpandedClay": "Expanded clay",
+            "LargeSlab": "Large slab",
+            "Concrete": "Concrete",
+            "Silicate": "Silicate",
+            "Cellular": "Cellular",
+            "ReinforcedConcrete": "Reinforced concrete",
+            "Other": "Other"
+        },
+        "DevelopmentType": {
+            "BlockOfFlats": "Block of flats",
+            "TenementHouse": "Tenement house",
+            "DetachedHouse": "Detached house",
+            "Infill": "Infill",
+            "TerracedHouse": "Terraced house",
+            "ApartmentBuilding": "Apartment building",
+            "Loft": "Loft"
+        },
+        "Floor": {
+            "Basement": "Basement",
+            "GroundFloor": "Ground floor",
+            "Attic": "Attic",
+            "First": "First",
+            "Second": "Second",
+            "Third": "Third",
+            "Fourth": "Fourth",
+            "Fifth": "Fifth",
+            "Sixth": "Sixth",
+            "Seventh": "Seventh",
+            "Eighth": "Eighth",
+            "Ninth": "Ninth",
+            "Tenth": "Tenth",
+            "MoreThanTenth": "More than tenth"
+        },
+        "HeatingType": {
+            "City": "City",
+            "Gas": "Gas",
+            "TiledStoves": "Tiled stoves",
+            "Electric": "Electric",
+            "BoilerRoom": "Boiler room",
+            "Others": "Others"
+        },
+        "OwnershipForm": {
+            "CooperativeOwnershipRightToUse": "Cooperative ownership's right to use",
+            "PerpetualOrLease": "Perpetual/Lease",
+            "FullOwnership": "Full ownership",
+            "Share": "Share"
+        },
+        "WindowType": {
+            "Plastic": "Plastic",
+            "Aluminum": "Aluminum",
+            "Wooden": "Wooden"
+        },
+        "AdditionalDetail": {
+            "Internet": "internet",
+            "CableTv": "cable tv",
+            "Phone": "phone",
+            "AntiBurglaryBlinds": "anti-burglary blinds",
+            "Monitoring": "monitoring / security",
+            "AntiBurglaryDoors": "anti-burglary doors",
+            "AntiBurglaryWindows": "anti-burglary windows",
+            "AlarmSystem": "alarm system",
+            "EntryPhone": "entry phone",
+            "Videophone": "videophone",
+            "ClosedArea": "closed Area",
+            "Furniture": "furniture",
+            "Fridge": "fridge",
+            "Tv": "tv",
+            "WashingMachine": "washing machine",
+            "Cooker": "cooker",
+            "Dishwasher": "dishwasher",
+            "Oven": "oven",
+            "Balcony": "balcony",
+            "Basement": "basement",
+            "Elevator": "elevator",
+            "AirConditioning": "air conditioning",
+            "UtilityRoom": "utility room",
+            "Garden": "garden",
+            "TwoStory": "two-story",
+            "Garage": "garage",
+            "ParkingSpace": "parking space",
+            "Terrace": "terrace",
+            "SeparateKitchen": "separate kitchen"
+        },
+        "Status": {
+            "Pending": "Pending",
+            "Approved": "Approved",
+            "Refused": "Refused",
+            "Closed": "Closed"
+        }
+    },
+    "Paginator": {
+        "NoResults": "No results found.",
+        "ItemsPerPageLabel": "Items per page",
+        "NextPageLabel": "Next page",
+        "PreviousPageLabel": "Previous page",
+        "FirstPageLabel": "First page",
+        "LastPageLabel": "Last page",
+        "RangePageLabel1": "0 of {{length}}",
+        "RangePageLabel2": "{{startIndex}} - {{endIndex}} of {{length}}"
+    }
+}

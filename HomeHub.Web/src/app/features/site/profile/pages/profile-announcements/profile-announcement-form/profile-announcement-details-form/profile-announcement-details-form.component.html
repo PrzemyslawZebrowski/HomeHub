@@ -1,0 +1,169 @@
+<div class="details"
+     [formGroup]="form">
+    <ng-container *ngIf="lookups$ | async as lookups">
+        <div class="row">
+            <div class="col-xl-7">
+                <div class="row">
+                    <mat-form-field class="col w-800 description-wrapper">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.Description' | translate}}</mat-label>
+                        <textarea matInput
+                                  type="text"
+                                  formControlName="description">
+                        </textarea>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field class="col w-300">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.DevelopmentType' | translate}}</mat-label>
+                        <mat-select formControlName="developmentTypeId">
+                            <mat-option *ngFor="let development of lookups.developments"
+                                        [value]="development.id">
+                                {{ 'Lookup.DevelopmentType.' + development.name | translate }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="col w-300">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.Floor' | translate}}</mat-label>
+                        <mat-select formControlName="floorId">
+                            <mat-option *ngFor="let floor of lookups.floors"
+                                        [value]="floor.id">
+                                {{ 'Lookup.Floor.' + floor.name | translate }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="col w-200">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.NumberOfFloors' | translate}}</mat-label>
+                        <input matInput
+                               type="number"
+                               formControlName="numberOfFloors">
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field class="col w-300">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.BuildingMaterial' | translate}}</mat-label>
+                        <mat-select formControlName="buildingMaterialId">
+                            <mat-option *ngFor="let buildingMaterial of lookups.buildingMaterials"
+                                        [value]="buildingMaterial.id">
+                                {{ 'Lookup.BuildingMaterial.' + buildingMaterial.name | translate }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="col w-300">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.WindowType' | translate}}</mat-label>
+                        <mat-select formControlName="windowTypeId">
+                            <mat-option *ngFor="let window of lookups.windows"
+                                        [value]="window.id">
+                                {{ 'Lookup.WindowType.' + window.name | translate }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field class="col w-300">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.HeatingType' | translate}}</mat-label>
+                        <mat-select formControlName="heatingTypeId">
+                            <mat-option *ngFor="let heating of lookups.heatings"
+                                        [value]="heating.id">
+                                {{ 'Lookup.HeatingType.' + heating.name | translate }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="col w-300">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.BuildYear' | translate}}</mat-label>
+                        <input matInput
+                               type="number"
+                               formControlName="buildYear">
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field class="col w-300">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.BuildingFinishCondition' | translate}}</mat-label>
+                        <mat-select formControlName="buildingFinishConditionId">
+                            <mat-option *ngFor="let condition of lookups.buildingFinishConditions"
+                                        [value]="condition.id">
+                                {{ 'Lookup.BuildingFinishCondition.' + condition.name | translate }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="col w-400">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.OwnershipForm' | translate}}</mat-label>
+                        <mat-select formControlName="ownershipFormId">
+                            <mat-option *ngFor="let ownership of lookups.ownerships"
+                                        [value]="ownership.id">
+                                {{ 'Lookup.OwnershipForm.' + ownership.name | translate }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field class="w-300">
+                        <mat-label>{{'ProfileAnnoucementForm.Details.AvailableFrom' | translate}}</mat-label>
+                        <input matInput
+                               [matDatepicker]="picker"
+                               formControlName="availableFrom"
+                               readonly>
+                        <mat-datepicker-toggle matIconSuffix
+                                               [for]="picker">
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-xl-5">
+                <div class="row">
+                    <mat-label>{{'ProfileAnnoucementForm.Details.Media' | translate}}</mat-label>
+                    <div class="col checkbox-wrapper">
+                        <mat-checkbox *ngFor="let detail of lookups.media"
+                                      (change)="checkboxChanged(detail.id, $event.checked)"
+                                      [checked]="detail.id | isDetailPresent: additionalDetailIds"
+                                      class="col-6">
+                            {{ 'Lookup.AdditionalDetail.' + detail.name | translate }}
+                        </mat-checkbox>
+                    </div>
+                </div>
+                <div class="row">
+                    <mat-label>{{'ProfileAnnoucementForm.Details.Security' | translate}}</mat-label>
+                    <div class="col checkbox-wrapper">
+                        <mat-checkbox *ngFor="let detail of lookups.security"
+                                      (change)="checkboxChanged(detail.id, $event.checked)"
+                                      [checked]="detail.id | isDetailPresent: additionalDetailIds"
+                                      class="col-6">
+                            {{ 'Lookup.AdditionalDetail.' + detail.name | translate }}
+                        </mat-checkbox>
+                    </div>
+                </div>
+                <div class="row">
+                    <mat-label>{{'ProfileAnnoucementForm.Details.Equipment' | translate}}</mat-label>
+                    <div class="col checkbox-wrapper">
+                        <mat-checkbox *ngFor="let detail of lookups.equipment"
+                                      (change)="checkboxChanged(detail.id, $event.checked)"
+                                      [checked]="detail.id | isDetailPresent: additionalDetailIds"
+                                      class="col-6">
+                            {{ 'Lookup.AdditionalDetail.' + detail.name | translate }}
+                        </mat-checkbox>
+                    </div>
+                </div>
+                <div class="row">
+                    <mat-label>{{'ProfileAnnoucementForm.Details.Additional' | translate}}</mat-label>
+                    <div class="col checkbox-wrapper">
+                        <mat-checkbox *ngFor="let detail of lookups.additional"
+                                      (change)="checkboxChanged(detail.id, $event.checked)"
+                                      [checked]="detail.id | isDetailPresent: additionalDetailIds"
+                                      class="col-6">
+                            {{ 'Lookup.AdditionalDetail.' + detail.name | translate }}
+                        </mat-checkbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

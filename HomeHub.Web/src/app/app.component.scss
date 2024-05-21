@@ -1,0 +1,7 @@
+@use 'variables';
+
+.app-wrapper {
+    min-height: calc(100vh - variables.$header-height);
+    margin-top: variables.$header-height;
+    padding-bottom: 20px;
+}

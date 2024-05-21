@@ -1,0 +1,29 @@
+pool:
+  name: Azure Pipelines
+
+steps:
+- task: NodeTool@0
+  displayName: 'Use Node 16.x'
+  inputs:
+    versionSpec: 16.x
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    workingDir: HomeHub.Web
+    verbose: false
+
+- task: RaulARuiz.angular-cli-1.angular-cli-build-task.AngularCLI@1
+  displayName: 'ng lint'
+  inputs:
+    command: lint
+    project: HomeHub.Web
+    verbose: true
+  timeoutInMinutes: 3
+
+- task: RaulARuiz.angular-cli-1.angular-cli-build-task.AngularCLI@1
+  displayName: 'ng build'
+  inputs:
+    command: custom
+    project: HomeHub.Web
+    custom: 'build --configuration production'

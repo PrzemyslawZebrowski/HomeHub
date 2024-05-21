@@ -1,0 +1,39 @@
+<div class="tile"
+     [routerLink]="['/admin','announcements', announcement.id]">
+    <div class="tile__photo">
+        <img [src]="announcement.photoUrl">
+    </div>
+    <div class="tile__content">
+        <div class="title">
+            {{ announcement.title }}
+        </div>
+        <div class="date-and-address">
+            <div class="create-date">
+                {{ 'ProfileAnnouncements.ProfileAnnouncementTile.Created' | translate }} {{ announcement.createdOn | date:
+                dateHourFormat }}
+            </div>
+            <div class="address">
+                <mat-icon>location_on</mat-icon>
+                {{ announcement.address }}
+            </div>
+        </div>
+        <div class="status">
+            <mat-chip highlighted
+                      disableRipple="true"
+                      [ngClass]="{'closed': announcement.statusId === status.Closed,
+            'approved': announcement.statusId === status.Approved,
+            'pending': announcement.statusId === status.Pending,
+            'refused': announcement.statusId === status.Refused}">
+                {{ 'Lookup.Status.' + announcement.statusName | translate }}
+            </mat-chip>
+        </div>
+    </div>
+    <div class="tile__price-details">
+        <div class="price">
+            {{ announcement.priceAmount | currency: announcement.priceCurrency.toString() }}
+        </div>
+        <div class="area">
+            {{ announcement.area }}<span [innerHTML]="'m&sup2'"></span>
+        </div>
+    </div>
+</div>

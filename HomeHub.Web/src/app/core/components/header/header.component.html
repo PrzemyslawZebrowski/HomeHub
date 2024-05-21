@@ -1,0 +1,87 @@
+<header class="header">
+    <nav class="container header__nav">
+        <div class="header__logo">
+            <img src="/assets/images/logo.png"
+                 routerLink="/" />
+        </div>
+
+        <div class="header__buttons">
+            <ng-container *ngIf="(isLoggedIn$ | async) === false; else userMenuTemplate">
+                <button mat-button
+                        class="my-account"
+                        (click)="login()">
+                    <mat-icon>person</mat-icon> {{'Navbar.MyAccount' | translate}}
+                </button>
+            </ng-container>
+
+            <button mat-raised-button
+                    color="accent"
+                    routerLink="/profile/announcements/new">
+                <mat-icon>add</mat-icon>
+                {{'Navbar.AddAnnouncement' | translate}}
+            </button>
+
+            <button mat-flat-button
+                    [matMenuTriggerFor]="currenciesMenu">
+                <ng-container *ngIf="currentCurrency$ | async as currentCurrency">
+                    {{currentCurrency.toString()}}
+                </ng-container>
+                <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
+                <mat-menu #currenciesMenu="matMenu">
+                    <ng-container *ngIf="currencies$ | async as currencies">
+                        <button *ngFor="let currency of currencies"
+                                mat-menu-item
+                                (click)="setCurrency(currency)">
+                            <span>{{currency.toString()}}</span>
+                        </button>
+                    </ng-container>
+                </mat-menu>
+            </button>
+
+            <button mat-flat-button
+                    [matMenuTriggerFor]="languagesMenu">
+                {{currentLanguage | uppercase}}
+                <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
+                <mat-menu #languagesMenu="matMenu">
+                    <button *ngFor="let lang of languages"
+                            mat-menu-item
+                            (click)="setLanguage(lang)">
+                        <span>{{lang | uppercase}}</span>
+                    </button>
+                </mat-menu>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<ng-template #userMenuTemplate>
+    <button mat-button
+            class="my-account"
+            [matMenuTriggerFor]="menu">
+        <mat-icon>person</mat-icon> {{'Navbar.MyAccount' | translate}}
+    </button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item
+                routerLink="/admin"
+                *hhHasRole="[userRoleEnum.Admin, userRoleEnum.Moderator]">
+            <mat-icon>admin_panel_settings</mat-icon> {{'Navbar.Menu.AdminPanel' | translate}}
+        </button>
+        <button mat-menu-item
+                routerLink="/profile/announcements">
+            <mat-icon>admin_panel_settings</mat-icon> {{'Navbar.Menu.Announcements' | translate}}
+        </button>
+        <button mat-menu-item
+                routerLink="/profile/favorite">
+            <mat-icon>admin_panel_settings</mat-icon> {{'Navbar.Menu.Favorite' | translate}}
+        </button>
+        <button mat-menu-item
+                routerLink="/profile/details">
+            <mat-icon>admin_panel_settings</mat-icon> {{'Navbar.Menu.Profile' | translate}}
+        </button>
+        <button mat-menu-item
+                (click)="logout()">
+            <mat-icon>logout</mat-icon> {{'Navbar.Menu.Logout' | translate}}
+        </button>
+    </mat-menu>
+</ng-template>

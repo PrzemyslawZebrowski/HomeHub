@@ -1,0 +1,313 @@
+{
+    "Common": {
+        "Save": "Zapisz",
+        "Close": "Zamknij",
+        "Add": "Dodaj",
+        "Remove": "Usuń",
+        "Next": "Dalej",
+        "Back": "Cofnij",
+        "Edit": "Edytuj",
+        "Approve": "Akceptuj",
+        "Refuse": "Odrzuć",
+        "Yes": "Tak",
+        "No": "Nie",
+        "Min": "Od",
+        "Max": "Do",
+        "All": "Wszystkie",
+        "Search": "Szukaj",
+        "More": "Więcej",
+        "Less": "Mniej",
+        "Clear": "Wyczyść",
+        "SeeMoreAnnouncements": "Zobacz więcej ogłoszeń",
+        "NoData": "Brak",
+        "Anonymous": "Anonimowy użytkownik"
+    },
+    "Navbar": {
+        "Sale": "Sprzedaż",
+        "LongTermRent": "Wynajem długoterminowy",
+        "ShortTermRent": "Wynajem krótkoterminowy",
+        "MyAccount": "Moje konto",
+        "AddAnnouncement": "Dodaj ogłoszenie",
+        "Menu": {
+            "AdminPanel": "Panel administratora",
+            "Announcements": "Ogłoszenia",
+            "Favorite": "Ulubione",
+            "Profile": "Profil",
+            "Logout": "Wyloguj"
+        }
+    },
+    "Home": {
+        "RecommendedAnnouncementsTitle": "Polecane",
+        "LatestAnnouncementsTitle": "Zobacz najnowsze ogłoszenia"
+    },
+    "Search": {
+        "Address": {
+            "Distance": "Dystans"
+        },
+        "Announcements": {
+            "OneRoom": "pokój",
+            "LessThanFiveRooms": "pokoje",
+            "MoreThanFourRooms": "pokoi"
+        },
+        "MainAnnouncement": {
+            "AnnouncementDetails": "Szczegóły ogłoszenia",
+            "Area": "Powierzchnia",
+            "OwnershipForm": "Forma własności",
+            "NumberOfRooms": "Liczba pokoi",
+            "BuildingFinishCondition": "Stan wykończenia",
+            "Floor": "Piętro",
+            "OutGoing": "Balkon / ogródek / taras",
+            "ParkingSpace": "Miejsce parkingowe",
+            "Heating": "Ogrzewanie",
+            "Description": "Opis",
+            "AdditionalDetails": "Informacje dodatkowe",
+            "Market": "Rynek",
+            "AdvertiserType": "Typ ogłoszeniodawcy",
+            "AvailableFrom": "Dostepne od",
+            "BuldingYear": "Rok budowy",
+            "DevelopmentType": "Rodzaj zabudowy",
+            "Windows": "Okna",
+            "Elevator": "Winda",
+            "Media": "Media",
+            "Security": "Zabezpieczenia",
+            "Equipment": "Wyposażenie",
+            "BuildingMaterial": "Materiał budynku",
+            "Price": "Cena"
+        }
+    },
+    "Admin": {
+        "Navbar": {
+            "Users": "Użytkownicy",
+            "Announcements": "Ogłoszenia"
+        },
+        "Users": {
+            "Email": "Email",
+            "Role": "Rola",
+            "Menu": {
+                "SetRole": "Zmień rolę"
+            }
+        },
+        "Announcements": {
+            "Status": "Status"
+        }
+    },
+    "ErrorPages": {
+        "Forbidden": "Nie powinno Cię tutaj być. Kliknij",
+        "NotFound": "Strona nie istnieje. Kliknij",
+        "Here": "tutaj",
+        "ToMainPage": "aby wrócić do strony głównej."
+    },
+    "ProfileDetails": {
+        "Name": "Nazwa",
+        "PhoneNumber": "Numer telefonu",
+        "ContactEmail": "Email kontaktowy",
+        "AdvertiserType": "Typ ogłoszeniodawcy"
+    },
+    "ProfileMenu": {
+        "Announcements": "Ogłoszenia",
+        "Favorite": "Ulubione",
+        "Profile": "Profil"
+    },
+    "ProfileAnnouncements": {
+        "ProfileAnnouncementTile": {
+            "Created": "Stworzony:",
+            "All": "Wszystkie"
+        }
+    },
+    "ProfileAnnoucementForm": {
+        "SubjectAndType": {
+            "Head": "Przedmiot oraz typ ogłoszenia",
+            "Subject": "Przedmiot",
+            "Type": "Typ",
+            "Menu": {
+                "Apartment": "Mieszkanie",
+                "House": "Dom",
+                "Rent": "Wynajem",
+                "Sale": "Sprzedaż"
+            }
+        },
+        "BasicInformation": {
+            "Head": "Podstawowe informacje",
+            "Title": "Tytuł",
+            "Price": "Cena",
+            "Currency": "Waluta",
+            "Room": "Liczba pokoi",
+            "AdvertiserType": "Typ ogłoszeniodawcy",
+            "MarketType": "Rynek",
+            "Area": "Powierzchnia w m&sup2"
+        },
+        "Details": {
+            "Head": "Szczegóły",
+            "Description": "Opis",
+            "DevelopmentType": "Typ zabudowy",
+            "Floor": "Piętro",
+            "NumberOfFloors": "Liczba pięter",
+            "BuildingMaterial": "Materiał budynku",
+            "WindowType": "Okna",
+            "HeatingType": "Ogrzewanie",
+            "BuildYear": "Rok budowy",
+            "BuildingFinishCondition": "Stan wykończenia",
+            "OwnershipForm": "Forma własności",
+            "AvailableFrom": "Dostępne od",
+            "Media": "Media",
+            "Security": "Bezpieczeństwo",
+            "Equipment": "Wyposażenie",
+            "Additional": "Dodatkowe informacje",
+            "Remote": "Zdalna obsługa"
+        },
+        "Multimedia": {
+            "Head": "Multimedia",
+            "VideoUrl": "Adres url do video",
+            "VirtualWalkUrl": "Adres url do wirtualnego spaceru",
+            "Photos": "Zdjęcia",
+            "AddPhoto": "Dodaj zdjęcie",
+            "RemovePhoto": "Usuń zdjęcie",
+            "SetAsMainPhoto": "Ustaw jako zdjęcie główne"
+        },
+        "Localization": {
+            "Head": "Lokalizacja",
+            "Address": "Adres"
+        },
+        "ContactDetails": {
+            "Head": "Dane kontaktowe",
+            "Name": "Imię i nazwisko",
+            "Phone": "Numer telefonu",
+            "Email": "Email"
+        },
+        "Summary": "Podsumowanie"
+    },
+    "UserRoleDialog": {
+        "Role": "Rola"
+    },
+    "Lookup": {
+        "Role": {
+            "Admin": "Administrator",
+            "Moderator": "Moderator",
+            "User": "Użytkownik"
+        },
+        "AdvertiserType": {
+            "Owner": "Osoba prywatna",
+            "Broker": "Biuro nieruchomości"
+        },
+        "MarketType": {
+            "Primary": "Pierwotny",
+            "AfterMarket": "Wtórny"
+        },
+        "AnnouncementSubject": {
+            "Apartment": "Mieszkanie",
+            "House": "Dom"
+        },
+        "AnnouncementType": {
+            "Rent": "Wynajem",
+            "Sale": "Sprzedaż"
+        },
+        "BuildingFinishCondition": {
+            "ForLiving": "Do zamieszkania",
+            "ForFinishing": "Do wykończenia",
+            "ForRenovation": "Do remontu"
+        },
+        "BuildingMaterial": {
+            "Brick": "Cegła",
+            "Wood": "Drewno",
+            "HollowBlock": "Pustak",
+            "ExpandedClay": "Keramzyt",
+            "LargeSlab": "Wielka płyta",
+            "Concrete": "Beton",
+            "Silicate": "Silikat",
+            "Cellular": "Beton komórkowe",
+            "ReinforcedConcrete": "Żelbet",
+            "Other": "Inne"
+        },
+        "DevelopmentType": {
+            "BlockOfFlats": "Blok",
+            "TenementHouse": "Kamienica",
+            "DetachedHouse": "Dom wolnostojący",
+            "Infill": "Plomba",
+            "TerracedHouse": "Szeregowiec",
+            "ApartmentBuilding": "Apartamentowiec",
+            "Loft": "Loft"
+        },
+        "Floor": {
+            "Basement": "Suterena",
+            "GroundFloor": "Parter",
+            "Attic": "Poddasze",
+            "First": "1",
+            "Second": "2",
+            "Third": "3",
+            "Fourth": "4",
+            "Fifth": "5",
+            "Sixth": "6",
+            "Seventh": "7",
+            "Eighth": "8",
+            "Ninth": "9",
+            "Tenth": "10",
+            "MoreThanTenth": "10<"
+        },
+        "HeatingType": {
+            "City": "Miejskie",
+            "Gas": "Gazowe",
+            "TiledStoves": "Piece kaflowe",
+            "Electric": "Elektryczne",
+            "BoilerRoom": "Kotłownia",
+            "Others": "Inne"
+        },
+        "OwnershipForm": {
+            "CooperativeOwnershipRightToUse": "Spółdzielcze wł. prawo do użytku",
+            "PerpetualOrLease": "Użytkowanie wieczyste/dzierżawa",
+            "FullOwnership": "Pełna własność",
+            "Share": "Share"
+        },
+        "WindowType": {
+            "Plastic": "Plastikowe",
+            "Aluminum": "Aluminiowe",
+            "Wooden": "Drewniane"
+        },
+        "AdditionalDetail": {
+            "Internet": "internet",
+            "CableTv": "telewizja kablowa",
+            "Phone": "telefon",
+            "AntiBurglaryBlinds": "rolety antywłamaniowe",
+            "Monitoring": "monitoring / ochrona",
+            "AntiBurglaryDoors": "drzwi antywłamaniowe",
+            "AntiBurglaryWindows": "okna antywłamaniowe",
+            "AlarmSystem": "system alarmowy",
+            "EntryPhone": "domofon",
+            "Videophone": "wideofon",
+            "ClosedArea": "teren zamknięty",
+            "Furniture": "meble",
+            "Fridge": "lodówka",
+            "Tv": "telewizor",
+            "WashingMachine": "pralka",
+            "Cooker": "kuchenka",
+            "Dishwasher": "zmywarka",
+            "Oven": "piekarnik",
+            "Balcony": "balkon",
+            "Basement": "piwnica",
+            "Elevator": "winda",
+            "AirConditioning": "klimatyzacja",
+            "UtilityRoom": "pomieszczenie użytkowe",
+            "Garden": "ogródek",
+            "TwoStory": "dwupoziomowe",
+            "Garage": "garaż",
+            "ParkingSpace": "miejsce parkingowe",
+            "Terrace": "taras",
+            "SeparateKitchen": "oddzielna kuchnia"
+        },
+        "Status": {
+            "Pending": "W trakcie sprawdzania",
+            "Approved": "Zaakceptowane",
+            "Refused": "Odrzucone",
+            "Closed": "Zamknięte"
+        }
+    },
+    "Paginator": {
+        "NoResults": "Nie znaleziono zawartości.",
+        "ItemsPerPageLabel": "Wyników na strone",
+        "NextPageLabel": "Następna strona",
+        "PreviousPageLabel": "Poprzednia strona",
+        "FirstPageLabel": "Pierwsza strona",
+        "LastPageLabel": "Ostatnia strona",
+        "RangePageLabel1": "0 z {{length}}",
+        "RangePageLabel2": "{{startIndex}} - {{endIndex}} z {{length}}"
+    }
+}

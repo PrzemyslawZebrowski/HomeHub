@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="title">{{'Home.LatestAnnouncementsTitle' | translate}}</div>
+    <ng-container *ngIf="announcements$ | async as announcements">
+        <div class="announcements">
+            <hh-announcement-small-tile *ngFor="let announcement of announcements"
+                                        [announcement]="announcement"></hh-announcement-small-tile>
+        </div>
+    </ng-container>
+</div>

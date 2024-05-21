@@ -1,0 +1,15 @@
+<div class="announcements container">
+    <hh-announcement-filters (search)="onSearch($event)"
+                             [initCriteria]="initCriteriaFormUrl"></hh-announcement-filters>
+    <ng-container *ngIf="announcements$ | async as page">
+        <div class="announcements__list">
+            <hh-announcement-tile *ngFor="let announcement of page.items"
+                                  [announcement]="announcement">
+            </hh-announcement-tile>
+        </div>
+        <div class="announcements__paginator">
+            <hh-paginator [page]="page"
+                          (pageChanged)="onPageChanged($event)"></hh-paginator>
+        </div>
+    </ng-container>
+</div>

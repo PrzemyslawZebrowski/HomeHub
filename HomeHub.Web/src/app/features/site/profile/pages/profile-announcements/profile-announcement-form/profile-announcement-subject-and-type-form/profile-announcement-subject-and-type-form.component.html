@@ -1,0 +1,26 @@
+<div class="subject-and-type"
+     [formGroup]="form">
+    <ng-container *ngIf="lookups$ | async as lookups">
+        <div class="row">
+            <mat-radio-group class="col"
+                             formControlName="subjectTypeId">
+                <mat-label>{{'ProfileAnnoucementForm.SubjectAndType.Subject' | translate}}</mat-label>
+                <mat-radio-button *ngFor="let subject of lookups.subjects"
+                                  [value]="subject.id">
+                    {{'Lookup.AnnouncementSubject.' + subject.name | translate}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div class="row">
+            <mat-radio-group class="col"
+                             formControlName="typeId">
+                <mat-label>{{'ProfileAnnoucementForm.SubjectAndType.Type' | translate}}</mat-label>
+                <mat-radio-button *ngFor="let type of lookups.types"
+                                  [value]="type.id">
+                    {{'Lookup.AnnouncementType.' + type.name | translate}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,32 @@
+<div class="user-bar">
+    <div class="container">
+        <ng-container *ngIf="userDetails$ | async as userDetails">
+            <div class="user">
+                <div class="details-wrapper">
+                    <div class="user__image">
+                        <img src="/assets/images/default-photo.svg">
+                    </div>
+                    <div class="user__details">
+                        <div class="user__name">
+                            {{userDetails.name ? userDetails.name : ('Common.Anonymous' | translate)}}
+                        </div>
+                        <ng-container *ngIf="userDetails.advertiserTypeName">
+                            <div class="user__advertiser-type">
+                                {{ 'Lookup.AdvertiserType.' + userDetails.advertiserTypeName| translate }}
+                            </div>
+                        </ng-container>
+                        <div class="user__email">
+                            <span class="bold">{{'ProfileDetails.ContactEmail' | translate}}</span>
+                            {{userDetails.contactEmail ? userDetails.contactEmail : ('Common.NoData' | translate)}}
+                        </div>
+                        <div class="user__phone">
+                            <span class="bold">{{'ProfileDetails.PhoneNumber' | translate}}</span>
+                            {{userDetails.phoneNumber ? userDetails.phoneNumber : ('Common.NoData' | translate)}}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

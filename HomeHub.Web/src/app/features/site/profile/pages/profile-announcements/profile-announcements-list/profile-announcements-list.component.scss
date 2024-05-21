@@ -1,0 +1,12 @@
+.profile-announcements {
+    &__list {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__paginator {
+        margin: 15px 0;
+    }
+}

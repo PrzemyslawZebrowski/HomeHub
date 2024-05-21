@@ -1,0 +1,43 @@
+<div class="tile"
+     [routerLink]="['/announcements',announcement.id]">
+    <div class="tile__photo">
+        <img [src]="announcement.photoUrl">
+    </div>
+    <div class="tile__content">
+        <div class="title">
+            {{ announcement.title }}
+        </div>
+        <div class="address">
+            {{ announcement.address }}
+        </div>
+        <div class="details">
+            <div class="price">
+                {{ announcement.priceAmount | currency: announcement.priceCurrency.toString() }}
+            </div>
+            <div class="number-of-rooms"
+                 *ngIf="announcement.numberOfRooms === 1">
+                {{ announcement.numberOfRooms }} {{'Search.Announcements.OneRoom'| translate}}
+            </div>
+            <div class="number-of-rooms"
+                 *ngIf="announcement.numberOfRooms > 1 && announcement.numberOfRooms < 5">
+                {{ announcement.numberOfRooms }} {{'Search.Announcements.LessThanFiveRooms'| translate}}
+            </div>
+            <div class="number-of-rooms"
+                 *ngIf="announcement.numberOfRooms >= 5">
+                {{ announcement.numberOfRooms }} {{'Search.Announcements.MoreThanFourRooms'| translate}}
+            </div>
+            <div class="area">
+                {{ announcement.area }}<span [innerHTML]="'m&sup2'"></span>
+            </div>
+        </div>
+        <div class="advertiser-type">
+            {{ 'Lookup.AdvertiserType.' + announcement.advertiserTypeName | translate }}
+        </div>
+    </div>
+    <ng-container *ngIf="(isLoggedIn$ | async) === true">
+        <div class="tile__favorite"
+             (click)="handleFavoriteAnnouncement(); $event.stopImmediatePropagation();">
+            <mat-icon [class.material-symbols-outlined]="!announcement.isFavorite">favorite</mat-icon>
+        </div>
+    </ng-container>
+</div>

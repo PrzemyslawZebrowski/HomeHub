@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeHub.Api", "HomeHub.Api\HomeHub.Api.csproj", "{1BDE163E-2FD1-4EF2-BDEC-0FCEAEAFD7CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeHub.Domain", "HomeHub.Domain\HomeHub.Domain.csproj", "{0DE4B8B6-8B01-49F3-86B2-8A2A7181AC7F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeHub.Application", "HomeHub.Application\HomeHub.Application.csproj", "{A481DB29-B6F8-4B70-91FA-693EA4F67906}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeHub.Infrastructure", "HomeHub.Infrastructure\HomeHub.Infrastructure.csproj", "{783338F4-C307-4990-A23C-2984E3063F7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A41D0120-AC33-48CC-BFD3-C7B9E03FCA86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeHub.Domain.Tests", "HomeHub.Domain.Tests\HomeHub.Domain.Tests.csproj", "{3356624A-8496-45A4-846E-A1D429B4CA2F}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HomeHub.SqlScripts", "HomeHub.SqlScripts\HomeHub.SqlScripts.sqlproj", "{FB77725B-C9F7-4868-8BAE-737CA225F175}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BDE163E-2FD1-4EF2-BDEC-0FCEAEAFD7CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BDE163E-2FD1-4EF2-BDEC-0FCEAEAFD7CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BDE163E-2FD1-4EF2-BDEC-0FCEAEAFD7CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BDE163E-2FD1-4EF2-BDEC-0FCEAEAFD7CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DE4B8B6-8B01-49F3-86B2-8A2A7181AC7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE4B8B6-8B01-49F3-86B2-8A2A7181AC7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE4B8B6-8B01-49F3-86B2-8A2A7181AC7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE4B8B6-8B01-49F3-86B2-8A2A7181AC7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A481DB29-B6F8-4B70-91FA-693EA4F67906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A481DB29-B6F8-4B70-91FA-693EA4F67906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A481DB29-B6F8-4B70-91FA-693EA4F67906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A481DB29-B6F8-4B70-91FA-693EA4F67906}.Release|Any CPU.Build.0 = Release|Any CPU
+		{783338F4-C307-4990-A23C-2984E3063F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{783338F4-C307-4990-A23C-2984E3063F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{783338F4-C307-4990-A23C-2984E3063F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{783338F4-C307-4990-A23C-2984E3063F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3356624A-8496-45A4-846E-A1D429B4CA2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3356624A-8496-45A4-846E-A1D429B4CA2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3356624A-8496-45A4-846E-A1D429B4CA2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3356624A-8496-45A4-846E-A1D429B4CA2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB77725B-C9F7-4868-8BAE-737CA225F175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB77725B-C9F7-4868-8BAE-737CA225F175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB77725B-C9F7-4868-8BAE-737CA225F175}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FB77725B-C9F7-4868-8BAE-737CA225F175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB77725B-C9F7-4868-8BAE-737CA225F175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB77725B-C9F7-4868-8BAE-737CA225F175}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3356624A-8496-45A4-846E-A1D429B4CA2F} = {A41D0120-AC33-48CC-BFD3-C7B9E03FCA86}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE2B584E-5297-4E8C-BC58-22359AB281B6}
+	EndGlobalSection
+EndGlobal

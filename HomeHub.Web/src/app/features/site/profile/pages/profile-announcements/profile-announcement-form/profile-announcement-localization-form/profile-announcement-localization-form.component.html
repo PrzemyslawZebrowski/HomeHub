@@ -1,0 +1,24 @@
+<div class="localization"
+     [formGroup]="form">
+
+    <div class="row">
+        <mat-form-field class="col w-400">
+            <mat-label>{{'ProfileAnnoucementForm.Localization.Address' | translate}}</mat-label>
+            <input #address
+                   matInput
+                   type="text"
+                   formControlName="address"
+                   (blur)="onMapAddressBlur()">
+        </mat-form-field>
+    </div>
+
+    <google-map #map="googleMap"
+                [width]="null"
+                [height]="null"
+                [options]="mapOptions">
+        <map-marker #marker="mapMarker"
+                    [options]="markerOptions"
+                    (mapDragend)="onMarkerDragend($event)">
+        </map-marker>
+    </google-map>
+</div>
